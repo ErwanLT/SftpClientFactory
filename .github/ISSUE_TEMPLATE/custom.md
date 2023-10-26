@@ -1,14 +1,5 @@
----
-name: Custom issue template
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
-
 **Type d'issue** (choisissez un) :
-- [ ] Rapport de bogue
+- [ ] Rapport de bug
 - [ ] Demande de fonctionnalité
 - [ ] Autre (spécifiez)
 
