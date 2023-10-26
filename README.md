@@ -66,4 +66,4 @@ Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 4. Soumettez une demande d'extraction (Pull Request) vers la branche principale de ce projet.
 
 ## Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
