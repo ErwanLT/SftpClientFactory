@@ -52,12 +52,12 @@ public static void main(String[] args) {
 }
 ```
 
-# Tests
+## Tests
 Ce projet est livré avec des tests unitaires pour la classe ConnexionThread. Les tests sont écrits en utilisant JUnit, une bibliothèque de test Java populaire.
 
 Pour exécuter les tests, assurez-vous d'avoir JUnit configuré dans votre projet. Ensuite, exécutez les tests à l'aide de votre environnement de développement ou de la ligne de commande.
 
-# Contribuer
+## Contribuer
 Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 
 1. Fork ce projet.
