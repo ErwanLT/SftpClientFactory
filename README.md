@@ -1,5 +1,7 @@
 # SftpClientFactory
 
+![java CI](https://github.com/ErwanLT/SftpClientFactory/actions/workflows/maven.yml/badge.svg?event=push)
+
 Une usine pour créer et gérer les clients SFTP en utilisant Apache Commons Pool 2.
 
 ## Description
