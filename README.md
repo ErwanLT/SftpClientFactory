@@ -1,56 +1,54 @@
 # SftpClientFactory
-Un projet Java pour gérer la connexion SSH d'un client SFTP à l'aide de la classe `ConnexionThread`.
+
+Une usine pour créer et gérer les clients SFTP en utilisant Apache Commons Pool 2.
 
 ## Description
 
-Ce projet est conçu pour illustrer la manière de gérer la connexion SSH d'un client SFTP en utilisant la classe `ConnexionThread`. La classe `ConnexionThread` étend la classe `Thread` et permet de gérer les tentatives de connexion, la réconnexion en cas d'échec et la gestion des exceptions.
+La classe `SftpClientFactory` est conçue pour créer et gérer les clients SFTP en utilisant Apache Commons Pool 2. Elle crée des clients SFTP en utilisant la bibliothèque SSHJ et les met en pool pour une utilisation efficace.
 
 ## Table des matières
 
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Exemples](#exemples)
+- [Exemples](#exemple)
+- [Configuration](#configuration)
 - [Tests](#tests)
 - [Contribuer](#contribuer)
 - [Licence](#licence)
 
 ## Installation
 
-Pour utiliser ce projet, suivez les étapes ci-dessous :
+Pour utiliser cette usine, assurez-vous de suivre ces étapes :
 
-1. Clônez ce référentiel sur votre système local.
-```bash
-git clone https://github.com/votre-utilisateur/votre-projet.git
-```
-2. Assurez-vous d'avoir les dépendances requises installées, y compris Java, JUnit, et toute autre dépendance spécifique au projet.
+1. Incluez cette classe dans votre projet.
+
+2. Assurez-vous d'avoir les dépendances nécessaires, y compris Apache Commons Pool 2, SSHJ, et d'autres dépendances liées à votre projet.
 
 ## Utilisation
-Pour utiliser la classe ConnexionThread dans votre propre projet, suivez ces étapes :
 
-Importez la classe ConnexionThread dans votre code.
-```java
-import fr.eletutour.thread.ConnexionThread;
-```
+Pour utiliser la classe `SftpClientFactory` dans votre projet, suivez ces étapes :
 
-## Exemples
-Voici un exemple simple d'utilisation de la classe ConnexionThread :
+1. Créez une instance de `SftpProperties` avec les informations de configuration SFTP.
 
+2. Instanciez la classe `SftpClientFactory` en lui passant les `SftpProperties`.
+
+3. Utilisez l'usine pour créer et gérer des clients SFTP.
+
+## Exemple
 ```java
 public static void main(String[] args) {
-    SSHClient sshClient = new SSHClient();
     SftpProperties sftpProperties = new SftpProperties();
+    SftpClientFactory factory = new SftpClientFactory(sftpProperties);
 
-    ConnexionThread connexionThread = new ConnexionThread("MyThread", sshClient, sftpProperties);
-    connexionThread.start();
+    SFTPClient sftpClient = factory.create();
+    // Utilisez le client SFTP pour télécharger ou téléverser des fichiers, etc.
 
-    // Attendez que le thread de connexion se termine, si nécessaire
-    try {
-        connexionThread.join();
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
+    factory.destroy();
 }
 ```
+
+## Configuration
+Assurez-vous que votre projet est correctement configuré pour inclure Apache Commons Pool 2 et SSHJ. Vous devez également définir correctement les propriétés SFTP dans l'objet SftpProperties.
 
 ## Tests
 Ce projet est livré avec des tests unitaires pour la classe ConnexionThread. Les tests sont écrits en utilisant JUnit, une bibliothèque de test Java populaire.
@@ -67,3 +65,4 @@ Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 
 ## Licence
 Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
+
